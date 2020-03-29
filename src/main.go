@@ -12,5 +12,11 @@ func main() {
 		ctx.HTML(200, "index.html", gin.H{})
 	})
 
+	data := "Hello Go/Gin!!"
+
+	router.GET("/go", func(ctx *gin.Context) {
+		ctx.HTML(200, "index.html", gin.H{"data": data})
+	})
+
 	router.Run()
 }
